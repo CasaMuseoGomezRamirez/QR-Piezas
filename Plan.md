@@ -28,9 +28,9 @@ QR-Piezas/
 1. [x] Estructura y recorte de imágenes.
 2. [x] Página 1: Minipiano Eavestaff (`piezas/minipiano-eavestaff/`).
 3. [x] `QR.md` con la URL de la pieza.
-4. [ ] Revisar en local en móvil (ancho 360–430 px) y ajustar.
-5. [ ] Commit y push al repo; activar Pages (Settings → Pages → rama `main`, carpeta `/root`).
-6. [ ] Probar la URL pública y generar el QR (nivel de corrección **H**, formato SVG/PNG alta resolución).
+4. [x] Revisar en local en móvil (ancho 360–430 px) y ajustar.
+5. [x] Commit y push al repo; activar Pages (Settings → Pages → rama `main`, carpeta `/root`).
+6. [x] Probar la URL pública y generar el QR (nivel de corrección **H**, formato SVG/PNG alta resolución).
 7. [ ] Repetir para las demás piezas.
 
 ## Sobre la perdurabilidad del QR

@@ -6,7 +6,7 @@ Base de las URL: `https://casamuseogomezramirez.github.io/QR-Piezas/`
 
 | N.º | Pieza | Carpeta (slug) | URL del QR | Estado |
 |----|-------|----------------|-----------|--------|
-| 1 | Minipiano Eavestaff y su banqueta “Ministool” | `piezas/minipiano-eavestaff/` | https://casamuseogomezramirez.github.io/QR-Piezas/piezas/minipiano-eavestaff/ | Local: http://localhost:8000/QR-Piezas/piezas/minipiano-eavestaff/ (sin publicar) |
+| 1 | Minipiano Eavestaff y su banqueta “Ministool” | `piezas/minipiano-eavestaff/` | https://casamuseogomezramirez.github.io/QR-Piezas/piezas/minipiano-eavestaff/ | Publicada. QR: `qr/minipiano-eavestaff.png` / `.svg` |
 
 ## Cómo añadir una pieza
 1. Copiar `piezas/minipiano-eavestaff/` a `piezas/<nuevo-slug>/`.

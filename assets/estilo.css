@@ -13,20 +13,20 @@ body{
 .pagina{max-width:560px;margin:0 auto;padding:0 18px 0;position:relative}
 
 /* Encabezado */
-.cabecera{text-align:center;padding:34px 0 18px;position:relative}
+.cabecera{text-align:center;padding:34px 28px 18px;position:relative}
 .cabecera::before,.cabecera::after{
-  content:"♪";position:absolute;color:var(--oro);font-size:34px;opacity:.9}
-.cabecera::before{left:2px;top:16px;transform:rotate(-12deg)}
-.cabecera::after{content:"♫";right:2px;top:26px;transform:rotate(8deg)}
+  content:"♪";position:absolute;color:var(--oro);font-size:28px;opacity:.9}
+.cabecera::before{left:0;top:16px;transform:rotate(-12deg)}
+.cabecera::after{content:"♫";right:0;top:26px;transform:rotate(8deg)}
 .titulo{
   font-family:"Great Vibes","Pinyon Script",cursive;font-weight:400;
-  font-size:clamp(46px,15vw,74px);line-height:.95;color:var(--vino);
+  font-size:clamp(38px,12.5vw,74px);line-height:.95;color:var(--vino);
   text-shadow:0 2px 0 rgba(201,161,74,.35);
 }
 .subtitulo{
-  display:block;margin:16px auto 0;padding:10px 16px;
+  display:block;margin:16px auto 0;padding:10px 12px;
   font-family:"Cinzel","Playfair Display",Georgia,serif;font-weight:700;
-  font-size:clamp(14px,4.4vw,20px);letter-spacing:.07em;line-height:1.25;
+  font-size:clamp(13px,4.2vw,20px);letter-spacing:.04em;line-height:1.25;
   color:var(--oro-cl);text-transform:uppercase;
   background:linear-gradient(180deg,#7d1422,var(--vino-osc));
   border:2px solid var(--oro);border-radius:40px;
@@ -61,16 +61,16 @@ body{
 
 /* Tarjetas con icono */
 .tarjeta{
-  position:relative;margin:30px 0 0;padding:26px 18px 16px 18px;
+  position:relative;margin:44px 0 0;padding:26px 18px 16px 18px;
   background:linear-gradient(160deg,#fff5de,var(--pergamino));
   border:1.5px solid var(--oro);border-radius:22px;
   box-shadow:0 4px 12px rgba(107,15,26,.15);
 }
 .tarjeta h2{
-  display:inline-flex;align-items:center;gap:10px;
-  position:absolute;top:-22px;left:-6px;
+  display:flex;align-items:center;gap:10px;width:fit-content;max-width:calc(100% + 12px);
+  position:relative;margin:-48px 0 4px -24px;
   font-family:"Cinzel","Playfair Display",serif;font-weight:700;
-  font-size:19px;color:#fff3d6;padding:6px 22px 6px 6px;border-radius:40px;
+  font-size:clamp(16px,4.6vw,19px);line-height:1.15;color:#fff3d6;padding:6px 22px 6px 6px;border-radius:40px;
   background:linear-gradient(180deg,#8a1626,var(--vino-osc));
   border:1.5px solid var(--oro);box-shadow:0 3px 8px rgba(74,10,18,.35);
 }
@@ -80,19 +80,19 @@ body{
   border:2px solid var(--oro);
 }
 .icono svg{width:22px;height:22px;fill:var(--oro-cl)}
-.tarjeta ul{list-style:none;margin-top:10px}
+.tarjeta ul{list-style:none;margin-top:12px}
 .tarjeta li{position:relative;padding-left:20px;margin-top:8px}
 .tarjeta li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--vino)}
 .tarjeta li strong{color:var(--vino)}
 .pequeño{font-size:16px}
 
 /* Cierre */
-.cierre{text-align:center;font-style:italic;font-size:22px;margin-top:30px;padding:22px 22px 26px}
-.cierre::after{content:"❦";display:block;color:var(--vino);font-style:normal;margin-top:10px;font-size:24px}
+.cierre{text-align:center;font-style:italic;font-size:22px;margin-top:30px;padding:22px 22px 18px}
+.cierre::after{content:"✦";display:block;color:var(--vino);font-style:normal;margin-top:10px;font-size:24px}
 
 /* Pie */
 .pie{
-  margin:30px -18px 0;padding:46px 18px 30px;text-align:center;position:relative;
+  margin:84px -18px 0;padding:46px 18px 30px;text-align:center;position:relative;
   background:linear-gradient(180deg,transparent 0,transparent 8px,var(--vino) 8px,var(--vino-osc) 100%);
   border-top:3px solid var(--oro);border-radius:50% 50% 0 0 / 22px 22px 0 0;
 }
