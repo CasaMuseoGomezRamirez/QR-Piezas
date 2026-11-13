@@ -61,14 +61,15 @@ body{
 
 /* Tarjetas con icono */
 .tarjeta{
-  position:relative;margin:44px 0 0;padding:26px 18px 16px 18px;
+  position:relative;margin:22px 0 0;padding:14px 16px 18px;
   background:linear-gradient(160deg,#fff5de,var(--pergamino));
   border:1.5px solid var(--oro);border-radius:22px;
   box-shadow:0 4px 12px rgba(107,15,26,.15);
 }
 .tarjeta h2{
-  display:flex;align-items:center;gap:10px;width:fit-content;max-width:calc(100% + 12px);
-  position:relative;margin:-48px 0 4px -24px;
+  /* El título vive DENTRO de la tarjeta, en el flujo normal: nunca se solapa con el texto. */
+  display:flex;align-items:center;gap:10px;width:fit-content;max-width:100%;
+  margin:0 0 14px;
   font-family:"Cinzel","Playfair Display",serif;font-weight:700;
   font-size:clamp(16px,4.6vw,19px);line-height:1.15;color:#fff3d6;padding:6px 22px 6px 6px;border-radius:40px;
   background:linear-gradient(180deg,#8a1626,var(--vino-osc));
@@ -80,8 +81,9 @@ body{
   border:2px solid var(--oro);
 }
 .icono svg{width:22px;height:22px;fill:var(--oro-cl)}
-.tarjeta ul{list-style:none;margin-top:12px}
-.tarjeta li{position:relative;padding-left:20px;margin-top:8px}
+.tarjeta ul{list-style:none;margin:0}
+.tarjeta li{position:relative;padding-left:20px}
+.tarjeta li+li{margin-top:10px}
 .tarjeta li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--vino)}
 .tarjeta li strong{color:var(--vino)}
 .pequeño{font-size:16px}

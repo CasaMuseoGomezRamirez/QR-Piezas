@@ -9,7 +9,13 @@ Base de las URL: `https://casamuseogomezramirez.github.io/QR-Piezas/`
 | 1 | Minipiano Eavestaff y su banqueta “Ministool” | `piezas/minipiano-eavestaff/` | https://casamuseogomezramirez.github.io/QR-Piezas/piezas/minipiano-eavestaff/ | Publicada. QR: `qr/minipiano-eavestaff.png` / `.svg` |
 
 ## Cómo añadir una pieza
-1. Copiar `piezas/minipiano-eavestaff/` a `piezas/<nuevo-slug>/`.
-2. Cambiar textos y `foto.png`.
-3. Añadir una fila a esta tabla.
-4. Commit + push; esperar a que Pages publique y probar la URL antes de imprimir el QR.
+Guía completa en [`README.md`](README.md#crear-una-pieza-nueva-paso-a-paso). Resumen:
+
+```powershell
+python herramientas/nueva_pieza.py <slug> --nombre "Nombre" --titulo "Título" --foto rutaoto.jpg
+python herramientas/verificar.py
+git add -A; git commit -m "Añade pieza: <nombre>"; git push
+```
+Después de publicar, escanear el QR con un celular y cambiar el estado a `Publicada`.
+
+Estados: `Borrador (sin publicar)` → `Publicada` → `QR impreso (fecha)`.

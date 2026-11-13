@@ -10,10 +10,14 @@ Convertir cada ficha ilustrada de una pieza (p. ej. `fuentes/minipiano-eavestaff
 ```
 QR-Piezas/
 ├─ index.html                 # portada mínima del sitio (no listada en los QR)
-├─ assets/                    # CSS y logo compartidos
-├─ piezas/<slug>/index.html   # una carpeta por pieza (+ foto.png)
+├─ assets/                    # CSS, logo e iconos compartidos
+├─ piezas/<slug>/             # index.html + foto.jpg por pieza
+├─ qr/                        # QR de cada pieza (png + svg)
+├─ plantilla/                 # punto de partida de piezas nuevas
+├─ herramientas/              # nueva_pieza.py, verificar.py, servir.py
 ├─ fuentes/                   # imágenes originales de las fichas
 ├─ QR.md                      # tabla pieza ↔ URL del QR
+├─ README.md                  # guía operativa (cómo crear piezas)
 └─ Plan.md
 ```
 
@@ -22,7 +26,7 @@ QR-Piezas/
 - **Mobile-first**: una columna, máx. 560 px, texto real (accesible, buscable), no la imagen incrustada.
 - **URL duraderas**: slug corto, en minúsculas y sin tildes; jamás se renombra. Con barra final (`/`).
 - Fuentes de Google (Great Vibes, Cinzel, Cormorant Garamond) con tipografías serif de respaldo.
-- Imágenes recortadas de la ficha original; si hay fotos mejores, sustituir `foto.png`.
+- Imágenes recortadas de la ficha original; si hay fotos mejores, sustituir `foto.jpg`.
 
 ## Fases
 1. [x] Estructura y recorte de imágenes.
@@ -31,7 +35,8 @@ QR-Piezas/
 4. [x] Revisar en local en móvil (ancho 360–430 px) y ajustar.
 5. [x] Commit y push al repo; activar Pages (Settings → Pages → rama `main`, carpeta `/root`).
 6. [x] Probar la URL pública y generar el QR (nivel de corrección **H**, formato SVG/PNG alta resolución).
-7. [ ] Repetir para las demás piezas.
+7. [x] Herramientas, plantilla y documentación para nuevas piezas (`README.md`).
+8. [ ] Repetir para las demás piezas con `herramientas/nueva_pieza.py`.
 
 ## Sobre la perdurabilidad del QR
 - El QR apunta al dominio `casamuseogomezramirez.github.io`; si la organización o el repo se renombran, la URL deja de funcionar. Mantener nombres.
@@ -39,6 +44,6 @@ QR-Piezas/
 
 ## Ver en local
 ```
-python servir.py
+python herramientas/servir.py
 # http://localhost:8000/QR-Piezas/piezas/minipiano-eavestaff/
 ```
