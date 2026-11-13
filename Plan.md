@@ -39,6 +39,6 @@ QR-Piezas/
 
 ## Ver en local
 ```
-python -m http.server 8000
-# http://localhost:8000/piezas/minipiano-eavestaff/
+python servir.py
+# http://localhost:8000/QR-Piezas/piezas/minipiano-eavestaff/
 ```
