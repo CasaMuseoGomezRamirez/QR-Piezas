@@ -47,18 +47,18 @@ def main():
 
     (RAIZ / "qr").mkdir(exist_ok=True)
     q = segno.make(url, error="h")
-    q.save(RAIZ / "qr" / f"{a.slug}.svg", scale=10, border=4)
-    q.save(RAIZ / "qr" / f"{a.slug}.png", scale=20, border=4)
+    q.save(RAIZ / "qr" / f"QR-{a.slug}.svg", scale=10, border=4)
+    q.save(RAIZ / "qr" / f"QR-{a.slug}.png", scale=20, border=4)
 
     md = RAIZ / "QR.md"
     lineas = md.read_text(encoding="utf-8").rstrip("\n").split("\n")
     filas = [i for i, l in enumerate(lineas) if re.match(r"\| \d+ \|", l)]
     n = len(filas) + 1
-    fila = f"| {n} | {a.nombre} | `piezas/{a.slug}/` | {url} | Borrador (sin publicar). QR: `qr/{a.slug}.png` |"
+    fila = f"| {n} | {a.nombre} | `piezas/{a.slug}/` | {url} | Borrador (sin publicar). QR: `qr/QR-{a.slug}.png` |"
     lineas.insert(filas[-1] + 1, fila)
     md.write_text("\n".join(lineas) + "\n", encoding="utf-8")
 
-    print(f"Creada: {dest}\nURL: {url}\nQR: qr/{a.slug}.png")
+    print(f"Creada: {dest}\nURL: {url}\nQR: qr/QR-{a.slug}.png")
     print("Siguiente: editar index.html, revisar en local, python herramientas/verificar.py")
 
 

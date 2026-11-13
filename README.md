@@ -11,12 +11,13 @@ Páginas web estáticas (una por pieza del museo) alojadas en GitHub Pages. Cada
 ```
 QR-Piezas/
 ├─ piezas/<slug>/          Una carpeta por pieza: index.html + foto.jpg
-├─ qr/<slug>.png|.svg      Código QR de cada pieza (listo para imprimir)
+├─ qr/QR-<slug>.png|.svg   Código QR de cada pieza (listo para imprimir)
 ├─ assets/                 estilo.css, logo-cgr.png e iconos.md (compartidos por todas las piezas)
 ├─ plantilla/index.html    Punto de partida para una pieza nueva
 ├─ fuentes/                Fichas/infografías originales (imágenes de referencia)
 ├─ herramientas/           nueva_pieza.py · verificar.py · servir.py
 ├─ QR.md                   Tabla pieza ↔ URL ↔ QR
+├─ REQUISITOS-IMPRESION-QR.md  Qué se puede y qué no antes de imprimir un QR
 ├─ 404.html  .nojekyll     Página de error y desactivación de Jekyll (no tocar)
 └─ index.html              Portada mínima (los QR no apuntan aquí)
 ```
@@ -27,7 +28,8 @@ QR-Piezas/
 2. **Slug:** minúsculas, números y guiones, sin tildes ni espacios (`minipiano-eavestaff`). Corto y descriptivo: URL más corta = QR más simple de escanear.
 3. **Rutas relativas** (`../../assets/estilo.css`), nunca absolutas con `/`: así funciona igual en local y bajo `/QR-Piezas/` en GitHub Pages. La única excepción son `og:image`, `og:url` y `canonical`, que deben ser URL completas.
 4. **Nada de textos solo dentro de imágenes.** El texto se escribe en HTML (accesible, buscable, escala bien en móvil).
-5. **Todo QR se prueba con un celular** antes de imprimir.
+5. **Nombre de los archivos de QR:** siempre `QR-<slug de la pieza>` (p. ej. `QR-minipiano-eavestaff.png` y `.svg`), dentro de `qr/`. No se usan otros nombres ni se guardan QR fuera de esa carpeta. El script `nueva_pieza.py` ya los nombra así y `verificar.py` lo comprueba.
+6. **Todo QR se prueba con un celular** y se revisa contra [`REQUISITOS-IMPRESION-QR.md`](REQUISITOS-IMPRESION-QR.md) antes de imprimir.
 
 ## Crear una pieza nueva (paso a paso)
 
@@ -38,7 +40,7 @@ QR-Piezas/
    ```powershell
    python herramientas/nueva_pieza.py mi-pieza --nombre "Nombre de la pieza" --titulo "Título grande" --foto C:\ruta\foto.jpg
    ```
-   Esto crea `piezas/mi-pieza/` con la plantilla, la foto optimizada (`foto.jpg`), el QR en `qr/mi-pieza.png` y `.svg`, y añade la fila a `QR.md`.
+   Esto crea `piezas/mi-pieza/` con la plantilla, la foto optimizada (`foto.jpg`), el QR en `qr/QR-mi-pieza.png` y `.svg`, y añade la fila a `QR.md`.
 3. **Escribe el contenido** en `piezas/mi-pieza/index.html`: introducción, sello (`<div class="sello-años">`), tarjetas (`<section class="tarjeta">`, cada una con `<h2>` y `<ul>`) y frase de cierre. Copia el texto de la ficha. Iconos en [`assets/iconos.md`](assets/iconos.md). Escribe un `alt` descriptivo en la foto.
 4. **Míralo en local:**
    ```powershell
@@ -53,12 +55,14 @@ QR-Piezas/
    git push
    ```
 7. **Espera 1–2 minutos** a que Pages publique (pestaña *Actions* del repo) y abre la URL pública.
-8. **Escanea el QR** (`qr/mi-pieza.png`) con un celular. Si abre la página correcta, actualiza en `QR.md` el estado a `Publicada` y haz commit/push.
+8. **Escanea el QR** (`qr/QR-mi-pieza.png`) con un celular. Si abre la página correcta, actualiza en `QR.md` el estado a `Publicada` y haz commit/push.
 9. **Imprime** el QR (ver abajo).
 
 > Hacer las cosas a mano también vale: copiar `plantilla/` a `piezas/<slug>/`, reemplazar los `{{MARCADORES}}`, añadir `foto.jpg`, generar el QR y añadir la fila a `QR.md`.
 
 ## Imprimir el QR
+
+La lista completa de lo permitido y lo prohibido está en [`REQUISITOS-IMPRESION-QR.md`](REQUISITOS-IMPRESION-QR.md); es obligatoria antes de cada impresión. Resumen:
 
 - Usa preferentemente el **SVG** (escala sin perder nitidez). El PNG es de 1140 px.
 - Tamaño mínimo recomendado: **2.5 × 2.5 cm**; para leer a 1 m de distancia, unos 8 cm.

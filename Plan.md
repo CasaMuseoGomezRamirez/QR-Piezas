@@ -12,7 +12,8 @@ QR-Piezas/
 ├─ index.html                 # portada mínima del sitio (no listada en los QR)
 ├─ assets/                    # CSS, logo e iconos compartidos
 ├─ piezas/<slug>/             # index.html + foto.jpg por pieza
-├─ qr/                        # QR de cada pieza (png + svg)
+├─ qr/                        # QR-<slug>.png y .svg de cada pieza
+├─ REQUISITOS-IMPRESION-QR.md # lista de control antes de imprimir
 ├─ plantilla/                 # punto de partida de piezas nuevas
 ├─ herramientas/              # nueva_pieza.py, verificar.py, servir.py
 ├─ fuentes/                   # imágenes originales de las fichas

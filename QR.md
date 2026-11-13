@@ -6,7 +6,7 @@ Base de las URL: `https://casamuseogomezramirez.github.io/QR-Piezas/`
 
 | N.º | Pieza | Carpeta (slug) | URL del QR | Estado |
 |----|-------|----------------|-----------|--------|
-| 1 | Minipiano Eavestaff y su banqueta “Ministool” | `piezas/minipiano-eavestaff/` | https://casamuseogomezramirez.github.io/QR-Piezas/piezas/minipiano-eavestaff/ | Publicada. QR: `qr/minipiano-eavestaff.png` / `.svg` |
+| 1 | Minipiano Eavestaff y su banqueta “Ministool” | `piezas/minipiano-eavestaff/` | https://casamuseogomezramirez.github.io/QR-Piezas/piezas/minipiano-eavestaff/ | Publicada. QR: `qr/QR-minipiano-eavestaff.png` / `.svg` |
 
 ## Cómo añadir una pieza
 Guía completa en [`README.md`](README.md#crear-una-pieza-nueva-paso-a-paso). Resumen:
@@ -17,5 +17,7 @@ python herramientas/verificar.py
 git add -A; git commit -m "Añade pieza: <nombre>"; git push
 ```
 Después de publicar, escanear el QR con un celular y cambiar el estado a `Publicada`.
+
+Nombre de los archivos de QR: siempre `QR-<slug>` (ver [README](README.md#reglas-que-no-se-rompen)). Antes de imprimir, cumplir [`REQUISITOS-IMPRESION-QR.md`](REQUISITOS-IMPRESION-QR.md).
 
 Estados: `Borrador (sin publicar)` → `Publicada` → `QR impreso (fecha)`.

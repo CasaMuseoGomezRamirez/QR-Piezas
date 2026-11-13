@@ -26,8 +26,10 @@ for d in sorted((RAIZ / "piezas").iterdir()):
             errores.append(f"{d.name}: no existe {ref}")
     if f"{BASE}piezas/{d.name}/" not in qr_md:
         errores.append(f"{d.name}: no está en QR.md")
-    if not (RAIZ / "qr" / f"{d.name}.png").exists():
-        errores.append(f"{d.name}: falta qr/{d.name}.png")
+    if not (RAIZ / "qr" / f"QR-{d.name}.png").exists():
+        errores.append(f"{d.name}: falta qr/QR-{d.name}.png")
+    if not (RAIZ / "qr" / f"QR-{d.name}.svg").exists():
+        errores.append(f"{d.name}: falta qr/QR-{d.name}.svg")
     if not re.search(r'<img[^>]+alt="[^"]+"', t):
         errores.append(f"{d.name}: imagen sin alt")
 
